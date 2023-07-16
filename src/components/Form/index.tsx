@@ -1,9 +1,11 @@
-import { Box, Typography, TextField, Button } from '@mui/material'
+import { Box, Typography, TextField, Button, FormControl, InputLabel, NativeSelect } from '@mui/material'
 import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { IForm } from '../../interfaces/IForm'
 import http from '../../http'
 import ResultModal from '../ResultModal'
+import courses from '../../data/courses.json'
+import { ICourse } from '../../interfaces/ICourse'
 
 export default function Form() {
 
@@ -13,9 +15,6 @@ export default function Form() {
     const [escoreBrutoP2Etapa2, setEscoreBrutoP2Etapa2] = useState<number>(0);
     const [escoreBrutoP1Etapa3, setEscoreBrutoP1Etapa3] = useState<number>(0);
     const [escoreBrutoP2Etapa3, setEscoreBrutoP2Etapa3] = useState<number>(0);
-    const [pseudoArgumentoFinal, setPseudoArgumentoFinal] = useState<number>(0);
-    const [minFlag, setMinFlag] = useState<number>(0);
-    const [medianFlag, setMedianFlag] = useState<number>(0);
     const [cotasNegrosFlag, setCotasNegrosFlag] = useState<number>(0);
     const [publicas1Flag, setPublicas1Flag] = useState<number>(0);
     const [publicas2Flag, setPublicas2Flag] = useState<number>(0);
@@ -40,9 +39,6 @@ export default function Form() {
             escore_bruto_p2_etapa2: escoreBrutoP2Etapa2,
             escore_bruto_p1_etapa3: escoreBrutoP1Etapa3,
             escore_bruto_p2_etapa3: escoreBrutoP2Etapa3,
-            pseudo_argumento_final: pseudoArgumentoFinal,
-            min_flag: minFlag,
-            median_flag: medianFlag,
             cotas_negros_flag: cotasNegrosFlag,
             publicas1_flag: publicas1Flag,
             publicas2_flag: publicas2Flag,
@@ -81,138 +77,161 @@ export default function Form() {
                 <Typography component={"h1"} variant="h6">Formulário Exam-pass</Typography>
                 <Box component={"form"} sx={{ width: '100%' }} onSubmit={handleSubmit}>
                     <TextField
-                        value={escoreBrutoP1Etapa1}
                         onChange={(event) => setEscoreBrutoP1Etapa1(Number(event.target.value))}
                         label="Escore Bruto - Prova 1, etapa 1"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        value={escoreBrutoP2Etapa1}
                         onChange={(event) => setEscoreBrutoP2Etapa1(Number(event.target.value))}
                         label="Escore Bruto - Prova 2, etapa 1"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        value={escoreBrutoP1Etapa2}
                         onChange={(event) => setEscoreBrutoP1Etapa2(Number(event.target.value))}
                         label="Escore Bruto - Prova 1, etapa 2"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        value={escoreBrutoP2Etapa2}
                         onChange={(event) => setEscoreBrutoP2Etapa2(Number(event.target.value))}
                         label="Escore Bruto - Prova 2, etapa 2"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        value={escoreBrutoP1Etapa3}
                         onChange={(event) => setEscoreBrutoP1Etapa3(Number(event.target.value))}
                         label="Escore Bruto - Prova 3, etapa 1"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        value={escoreBrutoP2Etapa3}
                         onChange={(event) => setEscoreBrutoP2Etapa3(Number(event.target.value))}
                         label="Escore Bruto - Prova 3, etapa 2"
                         variant="standard"
                         fullWidth
                         required />
-                    <TextField
-                        value={pseudoArgumentoFinal}
-                        onChange={(event) => setPseudoArgumentoFinal(Number(event.target.value))}
-                        label="Pseudo argumento final"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={minFlag}
-                        onChange={(event) => setMinFlag(Number(event.target.value))}
-                        label="Min Flag"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={medianFlag}
-                        onChange={(event) => setMedianFlag(Number(event.target.value))}
-                        label="Median Flag"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={cotasNegrosFlag}
-                        onChange={(event) => setCotasNegrosFlag(Number(event.target.value))}
-                        label="Flag cotas de negros"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas1Flag}
-                        onChange={(event) => setPublicas1Flag(Number(event.target.value))}
-                        label="Flag Públicas 1"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas2Flag}
-                        onChange={(event) => setPublicas2Flag(Number(event.target.value))}
-                        label="Flag Públicas 2"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas3Flag}
-                        onChange={(event) => setPublicas3Flag(Number(event.target.value))}
-                        label="Flag Públicas 3"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas4Flag}
-                        onChange={(event) => setPublicas4Flag(Number(event.target.value))}
-                        label="Flag Públicas 4"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas5Flag}
-                        onChange={(event) => setPublicas5Flag(Number(event.target.value))}
-                        label="Flag Públicas 5"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas6Flag}
-                        onChange={(event) => setPublicas6Flag(Number(event.target.value))}
-                        label="Flag Públicas 6"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas7Flag}
-                        onChange={(event) => setPublicas7Flag(Number(event.target.value))}
-                        label="Flag Públicas 7"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={publicas8Flag}
-                        onChange={(event) => setPublicas8Flag(Number(event.target.value))}
-                        label="Flag Públicas 8"
-                        variant="standard"
-                        fullWidth
-                        required />
-                    <TextField
-                        value={curso}
-                        onChange={(event) => setCurso(event.target.value)}
-                        label="Var 2"
-                        variant="standard"
-                        fullWidth
-                        required />
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Cota de negros
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setCotasNegrosFlag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 1
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas1Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl> 
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 2
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas2Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 3
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas3Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 4
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas4Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 5
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas5Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 6
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas6Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 7
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas7Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard">
+                            Públicas 8
+                        </InputLabel>
+                        <NativeSelect
+                            defaultValue={0}
+                            onChange={(event) => setPublicas8Flag(Number(event.target.value))}
+                        >
+                            <option value={0}>Não</option>
+                            <option value={1}>Sim</option>
+                        </NativeSelect>
+                    </FormControl>
+                    <FormControl fullWidth>
+                        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                            Curso
+                        </InputLabel>
+                        <NativeSelect
+                            onChange={(event) => setCurso(event.target.value)}
+                        >
+                            {courses.courses.map((course: ICourse) => (
+                                <option value={course.name}>{course.name}</option>
+                            ))}
+                        </NativeSelect>
+                    </FormControl>
                     <Button sx={{ marginTop: 1 }} type="submit" fullWidth variant="outlined">Salvar</Button>
                 </Box>
             </Box>

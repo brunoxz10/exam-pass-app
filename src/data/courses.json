@@ -1,0 +1,277 @@
+{
+    "courses": [
+        {
+            "name": "DIURNO ADMINISTRAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "NOTURNO ADMINISTRAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "CAMPUS UNB CEILÂNDIA (FCE) ENFERMAGEM (BACHARELADO)"
+        },
+        {
+            "name": "ENFERMAGEM (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIAS – AEROESPACIAL / AUTOMOTIVA / ELETRÔNICA / ENERGIA / SOFTWARE (BACHARELADOS)"
+        },
+        {
+            "name": "CAMPUS UNB PLANALTINA (FUP) – DIURNO CIÊNCIAS NATURAIS (LICENCIATURA)"
+        },
+        {
+            "name": "CAMPUS UNB PLANALTINA (FUP) – NOTURNO CIÊNCIAS NATURAIS (LICENCIATURA)"
+        },
+        {
+            "name": "AGRONOMIA (BACHARELADO)"
+        },
+        {
+            "name": "ARQUITETURA E URBANISMO (BACHARELADO)"
+        },
+        {
+            "name": "ARQUIVOLOGIA (BACHARELADO)"
+        },
+        {
+            "name": "ARTES CÊNICAS - INTERPRETAÇÃO TEATRAL (BACHARELADO)"
+        },
+        {
+            "name": "ARTES VISUAIS (BACHARELADO)"
+        },
+        {
+            "name": "ARTES VISUAIS (LICENCIATURA)"
+        },
+        {
+            "name": "BIBLIOTECONOMIA (BACHARELADO)"
+        },
+        {
+            "name": "BIOTECNOLOGIA (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIA DA COMPUTAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIA POLÍTICA (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIAS AMBIENTAIS (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIAS BIOLÓGICAS (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIAS CONTÁBEIS (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIAS ECONÔMICAS (BACHARELADO)"
+        },
+        {
+            "name": "CIÊNCIAS SOCIAIS – ANTROPOLOGIA / SOCIOLOGIA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "COMPUTAÇÃO (LICENCIATURA)"
+        },
+        {
+            "name": "COMUNICAÇÃO ORGANIZACIONAL (BACHARELADO)"
+        },
+        {
+            "name": "COMUNICAÇÃO SOCIAL - PUBLICIDADE E PROPAGANDA (BACHARELADO)"
+        },
+        {
+            "name": "COMUNICAÇÃO SOCIAL – AUDIOVISUAL (BACHARELADO)"
+        },
+        {
+            "name": "DESIGN – PROGRAMAÇÃO VISUAL/PROJETO DO PRODUTO (BACHARELADO)"
+        },
+        {
+            "name": "DIREITO (BACHARELADO)"
+        },
+        {
+            "name": "EDUCAÇÃO FÍSICA (BACHARELADO)"
+        },
+        {
+            "name": "EDUCAÇÃO FÍSICA (LICENCIATURA)"
+        },
+        {
+            "name": "ENGENHARIA AMBIENTAL (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA CIVIL (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA DE COMPUTAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA DE PRODUÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA DE REDES DE COMUNICAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA ELÉTRICA (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA FLORESTAL (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA MECATRÔNICA – CONTROLE E AUTOMAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA MECÂNICA (BACHARELADO)"
+        },
+        {
+            "name": "ENGENHARIA QUÍMICA (BACHARELADO)"
+        },
+        {
+            "name": "ESTATÍSTICA (BACHARELADO)"
+        },
+        {
+            "name": "FARMÁCIA (BACHARELADO)"
+        },
+        {
+            "name": "FILOSOFIA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "FILOSOFIA (LICENCIATURA)"
+        },
+        {
+            "name": "FISIOTERAPIA (BACHARELADO)"
+        },
+        {
+            "name": "FONOAUDIOLOGIA (BACHARELADO)"
+        },
+        {
+            "name": "FÍSICA (BACHARELADO)"
+        },
+        {
+            "name": "GEOFÍSICA (BACHARELADO)"
+        },
+        {
+            "name": "GEOGRAFIA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "GEOLOGIA (BACHARELADO)"
+        },
+        {
+            "name": "GESTÃO AMBIENTAL (BACHARELADO)"
+        },
+        {
+            "name": "GESTÃO DE AGRONEGÓCIO (BACHARELADO)"
+        },
+        {
+            "name": "GESTÃO DE POLÍTICAS PÚBLICAS (BACHARELADO)"
+        },
+        {
+            "name": "GESTÃO DO AGRONEGÓCIO (BACHARELADO)"
+        },
+        {
+            "name": "HISTÓRIA (BACHARELADO/LICENCIATURA )"
+        },
+        {
+            "name": "HISTÓRIA (LICENCIATURA)"
+        },
+        {
+            "name": "JORNALISMO (BACHARELADO)"
+        },
+        {
+            "name": "LETRAS – PORTUGUÊS DO BRASIL COMO SEGUNDA LÍNGUA (LICENCIATURA)"
+        },
+        {
+            "name": "LETRAS – TRADUÇÃO ESPANHOL (BACHARELADO)"
+        },
+        {
+            "name": "LETRAS – TRADUÇÃO – FRANCÊS (BACHARELADO)"
+        },
+        {
+            "name": "LETRAS – TRADUÇÃO – INGLÊS (BACHARELADO)"
+        },
+        {
+            "name": "LICENCIATURA EM ARTES CÊNICAS"
+        },
+        {
+            "name": "LICENCIATURA EM CIÊNCIAS BIOLÓGICAS"
+        },
+        {
+            "name": "LICENCIATURA EM FÍSICA"
+        },
+        {
+            "name": "LICENCIATURA EM MATEMÁTICA"
+        },
+        {
+            "name": "LICENCIATURA EM QUÍMICA"
+        },
+        {
+            "name": "LÍNGUA E LITERATURA JAPONESA (LICENCIATURA)"
+        },
+        {
+            "name": "LÍNGUA ESPANHOLA E LITERATURA ESPANHOLA E HISPANO - AMERICANA (LICENCIATURA)"
+        },
+        {
+            "name": "LÍNGUA ESTRANGEIRA APLICADA – MULTILINGUISMO E SOCIEDADE DA INFORMAÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "LÍNGUA FRANCESA E RESPECTIVA LITERATURA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "LÍNGUA INGLESA E RESPECTIVA LITERATURA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "LÍNGUA PORTUGUESA E RESPECTIVA LITERATURA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "LÍNGUA PORTUGUESA E RESPECTIVA LITERATURA (LICENCIATURA)"
+        },
+        {
+            "name": "MATEMÁTICA (BACHARELADO/LICENCIATURA)"
+        },
+        {
+            "name": "MEDICINA (BACHARELADO)"
+        },
+        {
+            "name": "MEDICINA VETERINÁRIA (BACHARELADO)"
+        },
+        {
+            "name": "MUSEOLOGIA (BACHARELADO)"
+        },
+        {
+            "name": "MÚSICA (BACHARELADO)"
+        },
+        {
+            "name": "MÚSICA (LICENCIATURA)"
+        },
+        {
+            "name": "NUTRIÇÃO (BACHARELADO)"
+        },
+        {
+            "name": "ODONTOLOGIA (BACHARELADO)"
+        },
+        {
+            "name": "PEDAGOGIA (LICENCIATURA)"
+        },
+        {
+            "name": "PSICOLOGIA (BACHARELADO / LICENCIATURA / PSICÓLOGO)"
+        },
+        {
+            "name": "QUÍMICA (BACHARELADO)"
+        },
+        {
+            "name": "QUÍMICA TECNOLÓGICA (BACHARELADO)"
+        },
+        {
+            "name": "RELAÇÕES INTERNACIONAIS (BACHARELADO)"
+        },
+        {
+            "name": "SAÚDE COLETIVA (BACHARELADO)"
+        },
+        {
+            "name": "SERVIÇO SOCIAL (BACHARELADO)"
+        },
+        {
+            "name": "TEORIA, CRÍTICA E HISTÓRIA DA ARTE (BACHARELADO)"
+        },
+        {
+            "name": "TERAPIA OCUPACIONAL (BACHARELADO)"
+        },
+        {
+            "name": "TURISMO (BACHARELADO)"
+        }
+    ]
+}
