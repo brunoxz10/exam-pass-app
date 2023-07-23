@@ -1,5 +1,5 @@
 import { Box, Typography, TextField, Button, FormControl, InputLabel, NativeSelect } from '@mui/material'
-import { useState } from 'react'
+import { useRef, useState, InputHTMLAttributes } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { IForm } from '../../interfaces/IForm'
 import http from '../../http'
@@ -9,22 +9,24 @@ import { ICourse } from '../../interfaces/ICourse'
 
 export default function Form() {
 
-    const [escoreBrutoP1Etapa1, setEscoreBrutoP1Etapa1] = useState<number>(0);
-    const [escoreBrutoP2Etapa1, setEscoreBrutoP2Etapa1] = useState<number>(0);
-    const [escoreBrutoP1Etapa2, setEscoreBrutoP1Etapa2] = useState<number>(0);
-    const [escoreBrutoP2Etapa2, setEscoreBrutoP2Etapa2] = useState<number>(0);
-    const [escoreBrutoP1Etapa3, setEscoreBrutoP1Etapa3] = useState<number>(0);
-    const [escoreBrutoP2Etapa3, setEscoreBrutoP2Etapa3] = useState<number>(0);
-    const [cotasNegrosFlag, setCotasNegrosFlag] = useState<number>(0);
-    const [publicas1Flag, setPublicas1Flag] = useState<number>(0);
-    const [publicas2Flag, setPublicas2Flag] = useState<number>(0);
-    const [publicas3Flag, setPublicas3Flag] = useState<number>(0);
-    const [publicas4Flag, setPublicas4Flag] = useState<number>(0);
-    const [publicas5Flag, setPublicas5Flag] = useState<number>(0);
-    const [publicas6Flag, setPublicas6Flag] = useState<number>(0);
-    const [publicas7Flag, setPublicas7Flag] = useState<number>(0);
-    const [publicas8Flag, setPublicas8Flag] = useState<number>(0);
-    const [curso, setCurso] = useState<string>('');
+    const escoreBrutoP1Etapa1 = useRef<InputHTMLAttributes<number>>();
+    const escoreBrutoP2Etapa1 = useRef<InputHTMLAttributes<number>>();
+    const escoreBrutoP1Etapa2 = useRef<InputHTMLAttributes<number>>();
+    const escoreBrutoP2Etapa2 = useRef<InputHTMLAttributes<number>>();
+    const escoreBrutoP1Etapa3 = useRef<InputHTMLAttributes<number>>();
+    const escoreBrutoP2Etapa3 = useRef<InputHTMLAttributes<number>>();
+
+    const cotasNegrosFlag = useRef<InputHTMLAttributes<number>>();
+    const publicas1Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas2Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas3Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas4Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas5Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas6Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas7Flag = useRef<InputHTMLAttributes<number>>();
+    const publicas8Flag = useRef<InputHTMLAttributes<number>>();
+
+    const curso = useRef<InputHTMLAttributes<string>>();
 
     const [proba, setProba] = useState<number>(0);
     const [openModal, setOpenModal] = useState(false);
@@ -33,28 +35,29 @@ export default function Form() {
         event.preventDefault()
 
         const form: IForm = {
-            escore_bruto_p1_etapa1: escoreBrutoP1Etapa1,
-            escore_bruto_p2_etapa1: escoreBrutoP2Etapa1,
-            escore_bruto_p1_etapa2: escoreBrutoP1Etapa2,
-            escore_bruto_p2_etapa2: escoreBrutoP2Etapa2,
-            escore_bruto_p1_etapa3: escoreBrutoP1Etapa3,
-            escore_bruto_p2_etapa3: escoreBrutoP2Etapa3,
-            cotas_negros_flag: cotasNegrosFlag,
-            publicas1_flag: publicas1Flag,
-            publicas2_flag: publicas2Flag,
-            publicas3_flag: publicas3Flag,
-            publicas4_flag: publicas4Flag,
-            publicas5_flag: publicas5Flag,
-            publicas6_flag: publicas6Flag,
-            publicas7_flag: publicas7Flag,
-            publicas8_flag: publicas8Flag,
-            course: curso
+            escore_bruto_p1_etapa1: escoreBrutoP1Etapa1.current?.value ? Number(escoreBrutoP1Etapa1.current?.value) : null,
+            escore_bruto_p2_etapa1: escoreBrutoP2Etapa1.current?.value ? Number(escoreBrutoP2Etapa1.current?.value) : null,
+            escore_bruto_p1_etapa2: escoreBrutoP1Etapa2.current?.value ? Number(escoreBrutoP1Etapa2.current?.value) : null,
+            escore_bruto_p2_etapa2: escoreBrutoP2Etapa2.current?.value ? Number(escoreBrutoP2Etapa2.current?.value) : null,
+            escore_bruto_p1_etapa3: escoreBrutoP1Etapa3.current?.value ? Number(escoreBrutoP1Etapa3.current?.value) : null,
+            escore_bruto_p2_etapa3: escoreBrutoP2Etapa3.current?.value ? Number(escoreBrutoP2Etapa3.current?.value) : null,
+            cotas_negros_flag: cotasNegrosFlag.current?.value ? Number(cotasNegrosFlag.current?.value) : null,
+            publicas1_flag: publicas1Flag.current?.value ? Number(publicas1Flag.current?.value) : null,
+            publicas2_flag: publicas2Flag.current?.value ? Number(publicas2Flag.current?.value) : null,
+            publicas3_flag: publicas3Flag.current?.value ? Number(publicas3Flag.current?.value) : null,
+            publicas4_flag: publicas4Flag.current?.value ? Number(publicas4Flag.current?.value) : null,
+            publicas5_flag: publicas5Flag.current?.value ? Number(publicas5Flag.current?.value) : null,
+            publicas6_flag: publicas6Flag.current?.value ? Number(publicas6Flag.current?.value) : null,
+            publicas7_flag: publicas7Flag.current?.value ? Number(publicas7Flag.current?.value) : null,
+            publicas8_flag: publicas8Flag.current?.value ? Number(publicas8Flag.current?.value) : null,
+            course: curso.current?.value ? String(curso.current?.value) : null
         }
 
         mutation.mutate(form);
-        // setProba(mutation.data?.data?.prediction?.probability);
 
         setOpenModal(true);
+
+        console.log(form);
 
     }
 
@@ -77,38 +80,50 @@ export default function Form() {
                 <Typography component={"h1"} variant="h6">Formulário Exam-pass</Typography>
                 <Box component={"form"} sx={{ width: '100%' }} onSubmit={handleSubmit}>
                     <TextField
-                        onChange={(event) => setEscoreBrutoP1Etapa1(Number(event.target.value))}
+                        type="number"
+                        inputProps={{step: "any"}}
+                        inputRef={escoreBrutoP1Etapa1}
                         label="Escore Bruto - Prova 1, etapa 1"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        onChange={(event) => setEscoreBrutoP2Etapa1(Number(event.target.value))}
+                        type="number"
+                        inputProps={{step: "any"}}
+                        inputRef={escoreBrutoP2Etapa1}
                         label="Escore Bruto - Prova 2, etapa 1"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        onChange={(event) => setEscoreBrutoP1Etapa2(Number(event.target.value))}
+                        type="number"
+                        inputProps={{step: "any"}}
+                        inputRef={escoreBrutoP1Etapa2}
                         label="Escore Bruto - Prova 1, etapa 2"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        onChange={(event) => setEscoreBrutoP2Etapa2(Number(event.target.value))}
+                        type="number"
+                        inputProps={{step: "any"}}
+                        inputRef={escoreBrutoP2Etapa2}
                         label="Escore Bruto - Prova 2, etapa 2"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        onChange={(event) => setEscoreBrutoP1Etapa3(Number(event.target.value))}
-                        label="Escore Bruto - Prova 3, etapa 1"
+                        type="number"
+                        inputProps={{step: "any"}}
+                        inputRef={escoreBrutoP1Etapa3}
+                        label="Escore Bruto - Prova 1, etapa 3"
                         variant="standard"
                         fullWidth
                         required />
                     <TextField
-                        onChange={(event) => setEscoreBrutoP2Etapa3(Number(event.target.value))}
-                        label="Escore Bruto - Prova 3, etapa 2"
+                        type="number"
+                        inputProps={{step: "any"}}
+                        inputRef={escoreBrutoP2Etapa3}
+                        label="Escore Bruto - Prova 2, etapa 3"
                         variant="standard"
                         fullWidth
                         required />
@@ -118,7 +133,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setCotasNegrosFlag(Number(event.target.value))}
+                            inputRef={cotasNegrosFlag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -130,7 +145,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas1Flag(Number(event.target.value))}
+                            inputRef={publicas1Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -142,7 +157,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas2Flag(Number(event.target.value))}
+                            inputRef={publicas2Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -154,7 +169,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas3Flag(Number(event.target.value))}
+                            inputRef={publicas3Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -166,7 +181,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas4Flag(Number(event.target.value))}
+                            inputRef={publicas4Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -178,7 +193,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas5Flag(Number(event.target.value))}
+                            inputRef={publicas5Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -190,7 +205,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas6Flag(Number(event.target.value))}
+                            inputRef={publicas6Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -202,7 +217,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas7Flag(Number(event.target.value))}
+                            inputRef={publicas7Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -214,7 +229,7 @@ export default function Form() {
                         </InputLabel>
                         <NativeSelect
                             defaultValue={0}
-                            onChange={(event) => setPublicas8Flag(Number(event.target.value))}
+                            inputRef={publicas8Flag}
                         >
                             <option value={0}>Não</option>
                             <option value={1}>Sim</option>
@@ -225,7 +240,7 @@ export default function Form() {
                             Curso
                         </InputLabel>
                         <NativeSelect
-                            onChange={(event) => setCurso(event.target.value)}
+                            inputRef={curso}
                         >
                             {courses.courses.map((course: ICourse) => (
                                 <option value={course.name}>{course.name}</option>
