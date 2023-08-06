@@ -21,7 +21,7 @@ export default function HomePage() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(/src/assets/PAS_logo.jpeg)',
+            backgroundImage: 'url(PAS_logo.jpeg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
