@@ -36,7 +36,7 @@ export default function ResultModal({ openModal, setOpenModal, result }: Props) 
                         Resultado
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Sua probabilidade de aprovação é {result}
+                        Sua probabilidade de aprovação é {result * 100} %
                     </Typography>
                 </Box>
             </Modal>

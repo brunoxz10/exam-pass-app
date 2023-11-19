@@ -57,8 +57,6 @@ export default function Form() {
 
         setOpenModal(true);
 
-        console.log(form);
-
     }
 
     const mutation = useMutation((newForm: IForm) => {
@@ -243,7 +241,7 @@ export default function Form() {
                             inputRef={curso}
                         >
                             {courses.courses.map((course: ICourse) => (
-                                <option value={course.name}>{course.name}</option>
+                                <option key={course.name} value={course.name}>{course.name}</option>
                             ))}
                         </NativeSelect>
                     </FormControl>
